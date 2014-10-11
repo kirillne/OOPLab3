@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Transports.AirTransports
 {
-    public class AirTransport :Transport
+    public abstract class AirTransport :Transport
     {
         private int runWayLength;
         
@@ -14,7 +14,7 @@ namespace Transports.AirTransports
         
         private int maxHeigth;
 
-        public AirTransport(IEngine engine, string stateNumber, int maxHeight,
+        protected AirTransport(IEngine engine, string stateNumber, int maxHeight,
             int runWayLength, int maxWeigth) : base(engine, stateNumber)
         {
             MaxHeigth = maxHeight;
