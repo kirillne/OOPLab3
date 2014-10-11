@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AitTransports", "AitTranspo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SityTransports", "SityTransport\SityTransports.csproj", "{5682AA28-EE60-41B4-AA0F-CB080832C8E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainFormApp", "MainFormApp\MainFormApp.csproj", "{623BB530-AD28-4474-A7AD-34E40D713D8F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{5682AA28-EE60-41B4-AA0F-CB080832C8E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5682AA28-EE60-41B4-AA0F-CB080832C8E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5682AA28-EE60-41B4-AA0F-CB080832C8E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{623BB530-AD28-4474-A7AD-34E40D713D8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{623BB530-AD28-4474-A7AD-34E40D713D8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{623BB530-AD28-4474-A7AD-34E40D713D8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{623BB530-AD28-4474-A7AD-34E40D713D8F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

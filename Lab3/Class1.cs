@@ -9,6 +9,5 @@ namespace Lab3
 {
     public class Class1
     {
-        Bitmap a = new Bitmap();
-    }
+          }
 }
