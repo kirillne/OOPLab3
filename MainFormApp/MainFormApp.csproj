@@ -79,13 +79,25 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AirTransports\AirTransports.csproj">
+      <Project>{B1B472C2-1DC8-47E7-ADBB-57621B2E01C1}</Project>
+      <Name>AirTransports</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GroundTransport\GroundTransports.csproj">
       <Project>{E9CA9E49-87E5-423F-8A6F-9D43DFFD3857}</Project>
       <Name>GroundTransports %28Transports\GroundTransports\GroundTransports%29</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SimpleEngines\SimpleEngines.csproj">
+      <Project>{487B9690-9843-4B72-960D-36CCDD96EA02}</Project>
+      <Name>SimpleEngines</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Transport\Transports.csproj">
       <Project>{9EEDE80D-7FC7-445D-ACDB-5B45E08381F4}</Project>
       <Name>Transports %28Transports\Transports%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Turbine\TurbineEngine.csproj">
+      <Project>{23DF8A26-0E02-4981-B390-23F5EC83B975}</Project>
+      <Name>TurbineEngine</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

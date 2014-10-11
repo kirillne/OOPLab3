@@ -47,7 +47,7 @@ namespace Transports.AirTransports
             get { return runWayLength; }
             set
             {
-                if (value < 1) throw new ArgumentException("Runway length count must be positive");
+                if (value < 0) throw new ArgumentException("Runway length count must be positive");
                 runWayLength = value;
             }
         }

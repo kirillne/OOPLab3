@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,6 +13,7 @@ namespace Transports
         {
             Engine = engine;
             StateNumber = stateNumber;
+            CurentPosition = new Position(new Address{State = "Belarus", Sity = "Minsk", Street = "Hikala", Home = "9"},"Start position" );
         }
          
         public String StateNumber { get; set; }

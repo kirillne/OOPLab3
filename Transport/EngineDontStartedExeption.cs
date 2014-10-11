@@ -18,9 +18,8 @@ namespace Transports
         {
         }
 
-        public EngineDontStartedExeption()
+        public EngineDontStartedExeption() : base("Engine don't started")
         {
-            base.Message = "Engine don't started";
         }
     }
 }

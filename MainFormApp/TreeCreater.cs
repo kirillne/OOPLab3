@@ -17,19 +17,25 @@ namespace MainFormApp
             {
                 result.Nodes.Add(GetTreeElement(o));
             }
+            return result;
         }
 
         private static TreeNode GetTreeElement(object element)
         {
             Type elementType = element.GetType();
-            var result = new TreeNode(elementType.Name) {Tag = element};
+            TreeNode result;
             if (!elementType.IsValueType && !(element is String))
             {
+                result = new TreeNode(elementType.Name) {Tag = element};
                 PropertyInfo[] properties = elementType.GetProperties();
                 foreach (var property in properties)
                 {
                     result.Nodes.Add(GetTreeElement(property.GetValue(element)));
                 }
+            }
+            else
+            {
+                result = new TreeNode(element.ToString()) { Tag = element };
             }
             return result;
         }
