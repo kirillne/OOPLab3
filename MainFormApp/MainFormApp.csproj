@@ -96,6 +96,10 @@
       <Project>{5682AA28-EE60-41B4-AA0F-CB080832C8E2}</Project>
       <Name>SityTransports</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SomeSerialiser\SomeSerialiserLib.csproj">
+      <Project>{8764af3c-5348-469e-85c7-793b6cf5c5f4}</Project>
+      <Name>SomeSerialiserLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Transport\Transports.csproj">
       <Project>{9EEDE80D-7FC7-445D-ACDB-5B45E08381F4}</Project>
       <Name>Transports %28Transports\Transports%29</Name>

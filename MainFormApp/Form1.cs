@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using Engines;
+using SomeSerialiserLib;
 using Transports;
 using Transports.AirTransports;
 using Transports.GroundTransports;
@@ -43,9 +44,7 @@ namespace MainFormApp
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-        }
+   
 
         private void treeView_AfterSelect(object sender, TreeViewEventArgs e)
         {
@@ -199,6 +198,13 @@ namespace MainFormApp
                         var serializer = new BinaryFormatter();
                         serializer.Serialize(streamWriter.BaseStream, elements);
                     }
+                    else if (saveFileDialog.FilterIndex == lab3FilterIndex)
+                    {
+                        var serializer = new SomeSerialiser();
+                        serializer.Serialize(streamWriter, elements);
+
+                    }
+
                 }
             }
         }
