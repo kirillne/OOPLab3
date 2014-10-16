@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Transports
 {
+    [Serializable]
     public abstract class Transport
     {
         protected Transport(Engine engine, String stateNumber)

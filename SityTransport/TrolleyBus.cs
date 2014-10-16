@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Transports.SityTransports
 {
+    [Serializable]
     public class TrolleyBus : SityBus
     {
         private int autonomicWorkTime;

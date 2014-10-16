@@ -7,6 +7,7 @@ using Transports;
 
 namespace Engines
 {
+    [Serializable]
     public class Turbine : Engine
     {
         private int power;

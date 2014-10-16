@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Transports
 {
+    [Serializable]
     public class Address
     {
         public Address()

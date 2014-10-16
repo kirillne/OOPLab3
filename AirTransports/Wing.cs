@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Transports.AirTransports
 {
+    [Serializable]
     public class Wing
     {
         private int length;

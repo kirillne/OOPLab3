@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Transports.GroundTransports
 {
+    [Serializable]
     public class Car : GroundTransport
     {
         public Car(Engine engine, string stateNumber, 

@@ -1,5 +1,8 @@
+using System;
+
 namespace Transports.SityTransports
 {
+    [Serializable]
     public class Route
     {
         public Route(Position from, Position to, int number)

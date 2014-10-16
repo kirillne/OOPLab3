@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,6 +22,9 @@ namespace MainFormApp
     {
         private const int xmlFilterIndex = 1;
 
+        private const int binFilterIndex = 2;
+
+        private const int lab3FilterIndex = 3;
 
         private TreeNode selectedNode;
 
@@ -96,26 +100,33 @@ namespace MainFormApp
         {
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                if (openFileDialog.FilterIndex == xmlFilterIndex)
+                using ( var streamReader = new StreamReader(openFileDialog.FileName))
                 {
-                    var serializer = new XmlSerializer(
-                        typeof(List<Transport>),
-                        new Type[]
-                        {
-                            typeof (Transport), typeof (Car), typeof (Plane),
-                            typeof (Helicopter), typeof (Engine), typeof (Bus),
-                            typeof (SityBus), typeof (TrolleyBus),
-                            typeof (Turbine), typeof (InternalCombustionEngine),
-                            typeof (PistonlessRotaryEngine), 
-                        });
-                    using (
-                        var streamReader =
-                            new StreamReader(openFileDialog.FileName))
+                    if (openFileDialog.FilterIndex == xmlFilterIndex)
                     {
-                        elements = (List<Transport>)serializer.Deserialize(streamReader);
+                        var serializer = new XmlSerializer(
+                            typeof (List<Transport>),
+                            new Type[]
+                            {
+                                typeof (Transport), typeof (Car), typeof (Plane),
+                                typeof (Helicopter), typeof (Engine),
+                                typeof (Bus),
+                                typeof (SityBus), typeof (TrolleyBus),
+                                typeof (Turbine),
+                                typeof (InternalCombustionEngine),
+                                typeof (PistonlessRotaryEngine),
+                            });
+
+                        elements = (List<Transport>) serializer.Deserialize(streamReader);
+                    }
+                    else if (saveFileDialog.FilterIndex == binFilterIndex)
+                    {
+                        var serializer = new BinaryFormatter();
+                        elements = (List<Transport>)serializer.Deserialize(streamReader.BaseStream);
                     }
                 }
                 treeView.Nodes.Add(TreeCreater.GetTree(elements));
+
             }
            
 
@@ -163,23 +174,30 @@ namespace MainFormApp
         {
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                if (saveFileDialog.FilterIndex == xmlFilterIndex)
+                using ( var streamWriter = new StreamWriter(saveFileDialog.FileName))
                 {
-                    var serializer = new XmlSerializer(
-                        typeof (List<Transport>),
-                        new Type[]
-                        {
-                            typeof (Transport), typeof (Car), typeof (Plane),
-                            typeof (Helicopter), typeof (Engine), typeof (Bus),
-                            typeof (SityBus), typeof (TrolleyBus),
-                            typeof (Turbine), typeof (InternalCombustionEngine),
-                            typeof (PistonlessRotaryEngine)
-                        });
-                    using (
-                        var streamWriter =
-                            new StreamWriter(saveFileDialog.FileName))
+                    if (saveFileDialog.FilterIndex == xmlFilterIndex)
                     {
+                        var serializer = new XmlSerializer(
+                            typeof (List<Transport>),
+                            new Type[]
+                            {
+                                typeof (Transport), typeof (Car), typeof (Plane),
+                                typeof (Helicopter), typeof (Engine),
+                                typeof (Bus),
+                                typeof (SityBus), typeof (TrolleyBus),
+                                typeof (Turbine),
+                                typeof (InternalCombustionEngine),
+                                typeof (PistonlessRotaryEngine)
+                            });
+
+
                         serializer.Serialize(streamWriter, elements);
+                    }
+                    else if (saveFileDialog.FilterIndex == binFilterIndex)
+                    {
+                        var serializer = new BinaryFormatter();
+                        serializer.Serialize(streamWriter.BaseStream, elements);
                     }
                 }
             }

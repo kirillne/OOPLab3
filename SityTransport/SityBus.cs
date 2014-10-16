@@ -7,6 +7,7 @@ using Transports.GroundTransports;
 
 namespace Transports.SityTransports
 {
+    [Serializable]
     public class SityBus : Bus, ISityTransport
     {
         private int cost;

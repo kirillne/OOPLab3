@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Transports.GroundTransports
 {
+    [Serializable]
     public class Bus : GroundTransport
     {
         public Bus(Engine engine, string stateNumber,

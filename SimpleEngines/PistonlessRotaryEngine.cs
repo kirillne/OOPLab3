@@ -7,6 +7,7 @@ using Transports;
 
 namespace Engines
 {
+    [Serializable]
     public class PistonlessRotaryEngine : Engine
     {
         public PistonlessRotaryEngine(int size, int power)

@@ -1,7 +1,9 @@
-﻿using Transports;
+﻿using System;
+using Transports;
 
 namespace Engines
 {
+    [Serializable]
     public class InternalCombustionEngine : Engine
     {
         private bool isEnabled = false;

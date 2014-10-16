@@ -7,6 +7,7 @@ using Transports;
 
 namespace Transports.GroundTransports
 {
+    [Serializable]
     public abstract class GroundTransport : Transport
     {
         private int wheelCount;
