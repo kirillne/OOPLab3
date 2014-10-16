@@ -19,8 +19,10 @@ namespace MainFormApp
 {
     public partial class Form1 : Form
     {
-        private TreeNode selectedNode;
+        private const int xmlFilterIndex = 1;
 
+
+        private TreeNode selectedNode;
 
         List<Transport> elements = new List<Transport>
             {
@@ -29,6 +31,7 @@ namespace MainFormApp
                new Helicopter(new PistonlessRotaryEngine(5,10),"DFG",2000,0,1,new Screw(4,10),new Screw(2,1)  ),
                new TrolleyBus(new InternalCombustionEngine(10,5),"ASD",4,true,4,2,150,10,new Route(new Position(),new Position(), 10 ),50 )
             };
+
 
         public Form1()
         {
@@ -91,8 +94,30 @@ namespace MainFormApp
 
         private void openButton_Click(object sender, EventArgs e)
         {
-
-            treeView.Nodes.Add(TreeCreater.GetTree(elements));
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                if (openFileDialog.FilterIndex == xmlFilterIndex)
+                {
+                    var serializer = new XmlSerializer(
+                        typeof(List<Transport>),
+                        new Type[]
+                        {
+                            typeof (Transport), typeof (Car), typeof (Plane),
+                            typeof (Helicopter), typeof (Engine), typeof (Bus),
+                            typeof (SityBus), typeof (TrolleyBus),
+                            typeof (Turbine), typeof (InternalCombustionEngine),
+                            typeof (PistonlessRotaryEngine), 
+                        });
+                    using (
+                        var streamReader =
+                            new StreamReader(openFileDialog.FileName))
+                    {
+                        elements = (List<Transport>)serializer.Deserialize(streamReader);
+                    }
+                }
+                treeView.Nodes.Add(TreeCreater.GetTree(elements));
+            }
+           
 
         }
 
@@ -138,12 +163,25 @@ namespace MainFormApp
         {
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                var serializer = new XmlSerializer(typeof(List<Transport>), new Type[] { typeof(Transport), typeof(Car), typeof(Plane), typeof(Helicopter), typeof(Engine),typeof(Bus), typeof(SityBus), typeof(TrolleyBus),typeof(Turbine), typeof(InternalCombustionEngine), typeof(PistonlessRotaryEngine) });
-                using (var streamWriter = new StreamWriter(saveFileDialog.FileName))
+                if (saveFileDialog.FilterIndex == xmlFilterIndex)
                 {
-                    serializer.Serialize(streamWriter, elements);    
+                    var serializer = new XmlSerializer(
+                        typeof (List<Transport>),
+                        new Type[]
+                        {
+                            typeof (Transport), typeof (Car), typeof (Plane),
+                            typeof (Helicopter), typeof (Engine), typeof (Bus),
+                            typeof (SityBus), typeof (TrolleyBus),
+                            typeof (Turbine), typeof (InternalCombustionEngine),
+                            typeof (PistonlessRotaryEngine)
+                        });
+                    using (
+                        var streamWriter =
+                            new StreamWriter(saveFileDialog.FileName))
+                    {
+                        serializer.Serialize(streamWriter, elements);
+                    }
                 }
-                
             }
         }
     }

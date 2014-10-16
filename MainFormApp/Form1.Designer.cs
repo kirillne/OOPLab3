@@ -32,11 +32,12 @@
             this.saveButton = new System.Windows.Forms.Button();
             this.openButton = new System.Windows.Forms.Button();
             this.changeValueGroupBox = new System.Windows.Forms.GroupBox();
-            this.integerNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.stringTextBox = new System.Windows.Forms.TextBox();
-            this.booleanComboBox = new System.Windows.Forms.ComboBox();
             this.changeValueButton = new System.Windows.Forms.Button();
+            this.booleanComboBox = new System.Windows.Forms.ComboBox();
+            this.stringTextBox = new System.Windows.Forms.TextBox();
+            this.integerNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.changeValueGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.integerNumericUpDown)).BeginInit();
             this.SuspendLayout();
@@ -88,6 +89,38 @@
             this.changeValueGroupBox.TabStop = false;
             this.changeValueGroupBox.Text = "Значение";
             // 
+            // changeValueButton
+            // 
+            this.changeValueButton.Enabled = false;
+            this.changeValueButton.Location = new System.Drawing.Point(5, 114);
+            this.changeValueButton.Name = "changeValueButton";
+            this.changeValueButton.Size = new System.Drawing.Size(134, 23);
+            this.changeValueButton.TabIndex = 3;
+            this.changeValueButton.Text = "Изменить";
+            this.changeValueButton.UseVisualStyleBackColor = true;
+            this.changeValueButton.Click += new System.EventHandler(this.changeValueButton_Click);
+            // 
+            // booleanComboBox
+            // 
+            this.booleanComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.booleanComboBox.Enabled = false;
+            this.booleanComboBox.FormattingEnabled = true;
+            this.booleanComboBox.Items.AddRange(new object[] {
+            "True",
+            "False"});
+            this.booleanComboBox.Location = new System.Drawing.Point(5, 71);
+            this.booleanComboBox.Name = "booleanComboBox";
+            this.booleanComboBox.Size = new System.Drawing.Size(135, 21);
+            this.booleanComboBox.TabIndex = 2;
+            // 
+            // stringTextBox
+            // 
+            this.stringTextBox.Enabled = false;
+            this.stringTextBox.Location = new System.Drawing.Point(5, 45);
+            this.stringTextBox.Name = "stringTextBox";
+            this.stringTextBox.Size = new System.Drawing.Size(134, 20);
+            this.stringTextBox.TabIndex = 1;
+            // 
             // integerNumericUpDown
             // 
             this.integerNumericUpDown.Enabled = false;
@@ -106,41 +139,13 @@
             0,
             0});
             // 
-            // stringTextBox
-            // 
-            this.stringTextBox.Enabled = false;
-            this.stringTextBox.Location = new System.Drawing.Point(5, 45);
-            this.stringTextBox.Name = "stringTextBox";
-            this.stringTextBox.Size = new System.Drawing.Size(134, 20);
-            this.stringTextBox.TabIndex = 1;
-            // 
-            // booleanComboBox
-            // 
-            this.booleanComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.booleanComboBox.Enabled = false;
-            this.booleanComboBox.FormattingEnabled = true;
-            this.booleanComboBox.Items.AddRange(new object[] {
-            "True",
-            "False"});
-            this.booleanComboBox.Location = new System.Drawing.Point(5, 71);
-            this.booleanComboBox.Name = "booleanComboBox";
-            this.booleanComboBox.Size = new System.Drawing.Size(135, 21);
-            this.booleanComboBox.TabIndex = 2;
-            // 
-            // changeValueButton
-            // 
-            this.changeValueButton.Enabled = false;
-            this.changeValueButton.Location = new System.Drawing.Point(5, 114);
-            this.changeValueButton.Name = "changeValueButton";
-            this.changeValueButton.Size = new System.Drawing.Size(134, 23);
-            this.changeValueButton.TabIndex = 3;
-            this.changeValueButton.Text = "Изменить";
-            this.changeValueButton.UseVisualStyleBackColor = true;
-            this.changeValueButton.Click += new System.EventHandler(this.changeValueButton_Click);
-            // 
             // saveFileDialog
             // 
             this.saveFileDialog.Filter = "XML files (*.xml)|*.xml|Binary file (*.bin)|*.bin|My format (*.lab3)|*.lab3";
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.Filter = "XML files (*.xml)|*.xml|Binary file (*.bin)|*.bin|My format (*.lab3)|*.lab3";
             // 
             // Form1
             // 
@@ -171,6 +176,7 @@
         private System.Windows.Forms.TextBox stringTextBox;
         private System.Windows.Forms.NumericUpDown integerNumericUpDown;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }
 
