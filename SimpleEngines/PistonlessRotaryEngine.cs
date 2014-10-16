@@ -13,19 +13,18 @@ namespace Engines
         public PistonlessRotaryEngine(int size, int power)
         {
             Size = size;
-            this.power = power;
+            this.Power = power;
         }
 
         public PistonlessRotaryEngine()
         {
             Size = 100;
-            this.power = 10;
+            this.Power = 10;
         }
 
         private bool isInputOpen = false;
 
         private bool isEnabled = false;
-        private int power;
 
         public override void Enable()
         {
@@ -41,10 +40,6 @@ namespace Engines
 
         public  int Size { get; set; }
 
-        public override int Power
-        {
-            get { return power; }
-           
-        }
+        public override int Power { get; set; }
     }
 }

@@ -118,10 +118,15 @@ namespace MainFormApp
 
                         elements = (List<Transport>) serializer.Deserialize(streamReader);
                     }
-                    else if (saveFileDialog.FilterIndex == binFilterIndex)
+                    else if (openFileDialog.FilterIndex == binFilterIndex)
                     {
                         var serializer = new BinaryFormatter();
                         elements = (List<Transport>)serializer.Deserialize(streamReader.BaseStream);
+                    }
+                    else if (openFileDialog.FilterIndex == lab3FilterIndex)
+                    {
+                        var serializer = new SomeSerialiser();
+                        elements = (List<Transport>)serializer.Deserialize(streamReader);
                     }
                 }
                 treeView.Nodes.Add(TreeCreater.GetTree(elements));

@@ -10,8 +10,6 @@ namespace Engines
     [Serializable]
     public class Turbine : Engine
     {
-        private int power;
-
         public Turbine(int shaftCount)
         {
             ShaftCount = shaftCount;
@@ -25,18 +23,15 @@ namespace Engines
 
         public override void Enable()
         {
-            power++;
+            Power++;
         }
 
         public override void Disable()
         {
-            power = 0;
+            Power = 0;
         }
 
-        public override int Power
-        {
-            get { return power; }
-        }
+        public override int Power { get; set; }
 
         public int ShaftCount { get; set; }
     }

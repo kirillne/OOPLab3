@@ -8,17 +8,15 @@ namespace Engines
     {
         private bool isEnabled = false;
 
-        private readonly int power;
-
         public InternalCombustionEngine()
         {
-            this.power = 10;
+            this.Power = 10;
             CylindersCount = 5;
         }
 
         public InternalCombustionEngine(int power, int cylindersCount)
         {
-            this.power = power;
+            this.Power = power;
             CylindersCount = cylindersCount;
         }
 
@@ -35,9 +33,6 @@ namespace Engines
         }
 
 
-        public override int Power
-        {
-            get { return power; }
-        }
+        public override int Power { get; set; }
     }
 }
