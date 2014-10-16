@@ -11,7 +11,7 @@ namespace Transports.GroundTransports
     {
         private int wheelCount;
 
-        protected GroundTransport(IEngine engine, string stateNumber, int whellCount,
+        protected GroundTransport(Engine engine, string stateNumber, int whellCount,
             bool isDriverNesessary, int doorsCount)
             : base(engine, stateNumber)
         {
@@ -19,6 +19,13 @@ namespace Transports.GroundTransports
             if (doorsCount < 1) throw new ArgumentException("Doors count must be positive");
             DoorsCount = doorsCount;
             IsDriverNesessary = isDriverNesessary;
+        }
+
+        protected GroundTransport() 
+        {
+            WheelCount = 4;
+            DoorsCount = 5;
+            IsDriverNesessary = true;
         }
 
         public int WheelCount
@@ -31,7 +38,7 @@ namespace Transports.GroundTransports
             }
         }
 
-        public int DoorsCount { get; private set; }
+        public int DoorsCount { get;  set; }
 
         public bool IsDriverNesessary { get; set; }
     }

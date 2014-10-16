@@ -8,6 +8,14 @@ namespace Transports
 {
     public class Address
     {
+        public Address()
+        {
+            State = "";
+            Sity = "";
+            Street = "";
+            Home = "";
+        }
+
         public String State { get; set; }
 
         public String Sity { get; set; }

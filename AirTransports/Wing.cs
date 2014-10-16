@@ -17,6 +17,12 @@ namespace Transports.AirTransports
             Heigth = height;
         }
 
+        public Wing()
+        {
+            Length = 100;
+            Heigth = 2;
+        }
+
         public int Length
         {
             get { return length; }

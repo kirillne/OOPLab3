@@ -7,32 +7,43 @@ using Transports;
 
 namespace Engines
 {
-    public class PistonlessRotaryEngine : IEngine
+    public class PistonlessRotaryEngine : Engine
     {
         public PistonlessRotaryEngine(int size, int power)
         {
             Size = size;
-            Power = power;
+            this.power = power;
+        }
+
+        public PistonlessRotaryEngine()
+        {
+            Size = 100;
+            this.power = 10;
         }
 
         private bool isInputOpen = false;
 
         private bool isEnabled = false;
+        private int power;
 
-        public void Enable()
+        public override void Enable()
         {
             isEnabled = true;
             isInputOpen = true;
         }
 
-        public void Disable()
+        public override void Disable()
         {
             isEnabled = false;
             isInputOpen = false;
         }
 
-        public int Size { get; set; }
+        public  int Size { get; set; }
 
-        public int Power { get; private set; }
+        public override int Power
+        {
+            get { return power; }
+           
+        }
     }
 }

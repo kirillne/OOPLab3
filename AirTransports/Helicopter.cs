@@ -8,13 +8,20 @@ namespace Transports.AirTransports
 {
     public class Helicopter : AirTransport
     {
-        public Helicopter(IEngine engine, string stateNumber, int maxHeight, 
+        public Helicopter(Engine engine, string stateNumber, int maxHeight, 
             int runWayLength, int maxWeigth, Screw mainScrew, Screw tailScrew)
             : base(engine, stateNumber, maxHeight, runWayLength, maxWeigth)
         {
             MainScrew = mainScrew;
             TailScrew = tailScrew;
         }
+
+        public Helicopter()
+        {
+            MainScrew = new Screw();
+            TailScrew = new Screw();
+        }
+
 
         public Screw MainScrew { get; set; }
 

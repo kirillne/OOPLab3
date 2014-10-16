@@ -8,12 +8,18 @@ namespace Transports.AirTransports
 {
     public class Plane : AirTransport
     {
-        public Plane(IEngine engine, string stateNumber, int maxHeight, int runWayLength,
+        public Plane(Engine engine, string stateNumber, int maxHeight, int runWayLength,
             int maxWeigth, Wing wingType, bool isWaterNesessary)
             : base(engine, stateNumber, maxHeight, runWayLength, maxWeigth)
         {
             WingType = wingType;
             IsWaterNesessary = isWaterNesessary;
+        }
+
+        public Plane()
+        {
+            WingType = new Wing();
+            IsWaterNesessary = false;
         }
 
 

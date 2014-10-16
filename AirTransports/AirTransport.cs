@@ -14,13 +14,21 @@ namespace Transports.AirTransports
         
         private int maxHeigth;
 
-        protected AirTransport(IEngine engine, string stateNumber, int maxHeight,
+        protected AirTransport(Engine engine, string stateNumber, int maxHeight,
             int runWayLength, int maxWeigth) : base(engine, stateNumber)
         {
             MaxHeigth = maxHeight;
             MaxWeigth = maxWeigth;
             RunWayLength = runWayLength;
         }
+
+        protected AirTransport()
+        {
+            MaxHeigth = 7000;
+            MaxWeigth = 50000;
+            RunWayLength = 200;
+        }
+
 
         public int MaxHeigth
         {

@@ -9,18 +9,25 @@ namespace Transports
 {
     public abstract class Transport
     {
-        protected Transport(IEngine engine, String stateNumber)
+        protected Transport(Engine engine, String stateNumber)
         {
             Engine = engine;
             StateNumber = stateNumber;
             CurentPosition = new Position(new Address{State = "Belarus", Sity = "Minsk", Street = "Hikala", Home = "9"},"Start position" );
         }
+
+        protected Transport()
+        {
+            Engine = null;
+            StateNumber = "ABC";
+            CurentPosition = new Position(new Address { State = "Belarus", Sity = "Minsk", Street = "Hikala", Home = "9" }, "Start position");
+        }
          
         public String StateNumber { get; set; }
 
-        public IEngine Engine { get; private set; }
+        public Engine Engine { get;  set; }
 
-        public Position CurentPosition { get; protected set; }
+        public Position CurentPosition { get;  set; }
 
         public void TurnOn()
         {

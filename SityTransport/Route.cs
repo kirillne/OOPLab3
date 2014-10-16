@@ -9,6 +9,13 @@ namespace Transports.SityTransports
             Number = number;
         }
 
+        public Route()
+        {
+            From = new Position();
+            To = new Position();
+            Number = 1;
+        }
+
         public Position From { get; set; }
 
         public Position To { get; set; }

@@ -10,7 +10,7 @@ namespace Transports.SityTransports
     {
         private int autonomicWorkTime;
 
-        public TrolleyBus(IEngine engine, string stateNumber, int whellCount,
+        public TrolleyBus(Engine engine, string stateNumber, int whellCount,
             bool isDriverNesessary, int doorsCount, int articulationCount,
             int maxPassagersCount, int cost, Route route, int autonomicWorkTime)
             : base(
@@ -19,6 +19,12 @@ namespace Transports.SityTransports
         {
             AutonomicWorkTime = autonomicWorkTime;
         }
+
+        public TrolleyBus()
+        {
+            AutonomicWorkTime = 50;
+        }
+
 
         public int AutonomicWorkTime
         {

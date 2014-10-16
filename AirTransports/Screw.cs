@@ -15,9 +15,15 @@ namespace Transports.AirTransports
         public Screw(int bladeCount, int bladeLength)
         {
             BladeCount = bladeCount;
-
             BladeLength = bladeLength;
         }
+
+        public Screw()
+        {
+            BladeCount = 4;
+            BladeLength = 5;
+        }
+
 
         public int BladeCount
         {

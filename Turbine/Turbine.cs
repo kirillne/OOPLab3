@@ -7,25 +7,35 @@ using Transports;
 
 namespace Engines
 {
-    public class Turbine : IEngine
+    public class Turbine : Engine
     {
+        private int power;
 
         public Turbine(int shaftCount)
         {
             ShaftCount = shaftCount;
         }
 
-        public void Enable()
+        public Turbine()
         {
-            Power++;
+            ShaftCount = 5;
         }
 
-        public void Disable()
+
+        public override void Enable()
         {
-            Power = 0;
+            power++;
         }
 
-        public int Power { get; private set; }
+        public override void Disable()
+        {
+            power = 0;
+        }
+
+        public override int Power
+        {
+            get { return power; }
+        }
 
         public int ShaftCount { get; set; }
     }

@@ -11,7 +11,7 @@ namespace Transports.SityTransports
     {
         private int cost;
 
-        public SityBus(IEngine engine, string stateNumber, int whellCount,
+        public SityBus(Engine engine, string stateNumber, int whellCount,
             bool isDriverNesessary, int doorsCount, int articulationCount,
             int maxPassagersCount, int cost, Route route)
             : base(
@@ -20,6 +20,13 @@ namespace Transports.SityTransports
         {
             Cost = cost;
             Route = route;
+        }
+
+
+        public SityBus()
+        {
+            Cost = 10;
+            Route = new Route();
         }
 
         public int Cost

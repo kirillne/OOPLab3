@@ -8,7 +8,7 @@ namespace Transports.GroundTransports
 {
     public class Car : GroundTransport
     {
-        public Car(IEngine engine, string stateNumber, 
+        public Car(Engine engine, string stateNumber, 
             int whellCount, bool isDriverNesessary, int doorsCount,
             int seatsCount, int trankSize)
             : base(engine, stateNumber, whellCount, isDriverNesessary, doorsCount)
@@ -16,6 +16,13 @@ namespace Transports.GroundTransports
             TrankSize = trankSize;
             SeatsCount = seatsCount;
         }
+
+        public Car()
+        {
+            TrankSize = 10;
+            SeatsCount = 20;
+        }
+
 
         private int seatsCount;
 

@@ -17,5 +17,11 @@ namespace Transports
             this.Address = address;
             this.Name = name;
         }
+
+        public Position()
+        {
+            this.Address = new Address();
+            this.Name = "Empty";
+        }
     }
 }

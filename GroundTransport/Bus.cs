@@ -8,13 +8,19 @@ namespace Transports.GroundTransports
 {
     public class Bus : GroundTransport
     {
-        public Bus(IEngine engine, string stateNumber,
+        public Bus(Engine engine, string stateNumber,
             int whellCount, bool isDriverNesessary, int doorsCount,
             int articulationCount, int maxPassagersCount)
             : base(engine, stateNumber, whellCount, isDriverNesessary, doorsCount)
         {
             ArticulationCount = articulationCount;
             MaxPassagersCount = maxPassagersCount;
+        }
+
+        public Bus()
+        {
+            ArticulationCount = 1;
+            MaxPassagersCount = 80;
         }
 
         private int articulationCount;

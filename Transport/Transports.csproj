@@ -41,7 +41,7 @@
   <ItemGroup>
     <Compile Include="Address.cs" />
     <Compile Include="EngineDontStartedExeption.cs" />
-    <Compile Include="IEngine.cs" />
+    <Compile Include="Engine.cs" />
     <Compile Include="Position.cs" />
     <Compile Include="Transport.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

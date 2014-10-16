@@ -53,6 +53,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TreeCreater.cs" />
+    <Compile Include="TreeNodeTag.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -90,6 +91,10 @@
     <ProjectReference Include="..\SimpleEngines\SimpleEngines.csproj">
       <Project>{487B9690-9843-4B72-960D-36CCDD96EA02}</Project>
       <Name>SimpleEngines</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SityTransport\SityTransports.csproj">
+      <Project>{5682AA28-EE60-41B4-AA0F-CB080832C8E2}</Project>
+      <Name>SityTransports</Name>
     </ProjectReference>
     <ProjectReference Include="..\Transport\Transports.csproj">
       <Project>{9EEDE80D-7FC7-445D-ACDB-5B45E08381F4}</Project>

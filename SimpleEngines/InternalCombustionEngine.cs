@@ -2,29 +2,40 @@
 
 namespace Engines
 {
-    public class InternalCombustionEngine : IEngine
+    public class InternalCombustionEngine : Engine
     {
         private bool isEnabled = false;
 
+        private readonly int power;
+
+        public InternalCombustionEngine()
+        {
+            this.power = 10;
+            CylindersCount = 5;
+        }
+
         public InternalCombustionEngine(int power, int cylindersCount)
         {
-            Power = power;
+            this.power = power;
             CylindersCount = cylindersCount;
         }
 
         public int CylindersCount { get; set; }
 
-        public void Enable()
+        public override void Enable()
         {
             isEnabled = true;
         }
 
-        public void Disable()
+        public override void Disable()
         {
             isEnabled = false;
         }
 
 
-        public int Power { get; private set; }
+        public override int Power
+        {
+            get { return power; }
+        }
     }
 }
