@@ -42,6 +42,12 @@
     <Compile Include="SomeSerialiser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Lab1\AssemblyLoader\AssemblyLoader.csproj">
+      <Project>{BBB0B572-58B4-4177-9C7E-0DAB59BDF43B}</Project>
+      <Name>AssemblyLoader</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

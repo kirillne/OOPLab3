@@ -5,17 +5,15 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
-using Engines;
+using AssemblyLoader;
 using SomeSerialiserLib;
 using Transports;
-using Transports.AirTransports;
-using Transports.GroundTransports;
-using Transports.SityTransports;
 
 namespace MainFormApp
 {
@@ -29,18 +27,24 @@ namespace MainFormApp
 
         private TreeNode selectedNode;
 
-        List<Transport> elements = new List<Transport>
+        private LoaderSerializationBinder serializationBinder;
+
+        private Type[] types;
+
+        List<Transport> elements; /*= new List<Transport>
             {
                new Car(new InternalCombustionEngine(10,5),"ASD",4,true,4,4,10 ),
                new Plane(new Turbine(2),"QWE",2000,700,50,new Wing(500,10),false ),
                new Helicopter(new PistonlessRotaryEngine(5,10),"DFG",2000,0,1,new Screw(4,10),new Screw(2,1)  ),
                new TrolleyBus(new InternalCombustionEngine(10,5),"ASD",4,true,4,2,150,10,new Route(new Position(),new Position(), 10 ),50 )
-            };
+            };*/
 
 
         public Form1()
         {
             InitializeComponent();
+            types = Loader.Load("Libs");
+            serializationBinder = new LoaderSerializationBinder(types);
         }
 
 
@@ -101,33 +105,51 @@ namespace MainFormApp
             {
                 using ( var streamReader = new StreamReader(openFileDialog.FileName))
                 {
-                    if (openFileDialog.FilterIndex == xmlFilterIndex)
+                    try
                     {
-                        var serializer = new XmlSerializer(
-                            typeof (List<Transport>),
-                            new Type[]
-                            {
-                                typeof (Transport), typeof (Car), typeof (Plane),
-                                typeof (Helicopter), typeof (Engine),
-                                typeof (Bus),
-                                typeof (SityBus), typeof (TrolleyBus),
-                                typeof (Turbine),
-                                typeof (InternalCombustionEngine),
-                                typeof (PistonlessRotaryEngine),
-                            });
+                        if (openFileDialog.FilterIndex == xmlFilterIndex)
+                        {
+                            var serializer = new XmlSerializer(
+                                typeof (List<Transport>),
+                                types);
 
-                        elements = (List<Transport>) serializer.Deserialize(streamReader);
+                            elements =
+                                (List<Transport>)
+                                    serializer.Deserialize(streamReader);
+                        }
+                        else if (openFileDialog.FilterIndex == binFilterIndex)
+                        {
+                            var serializer = new BinaryFormatter();
+                            serializer.Binder = serializationBinder;
+                            elements =
+                                (List<Transport>)
+                                    serializer.Deserialize(
+                                        streamReader.BaseStream);
+                        }
+                        else if (openFileDialog.FilterIndex == lab3FilterIndex)
+                        {
+                            var serializer = new SomeSerialiser();
+                            serializer.Binder = serializationBinder;
+                            elements =
+                                (List<Transport>)
+                                    serializer.Deserialize(streamReader);
+                        }
                     }
-                    else if (openFileDialog.FilterIndex == binFilterIndex)
+                    catch (SerializationException ex)
                     {
-                        var serializer = new BinaryFormatter();
-                        elements = (List<Transport>)serializer.Deserialize(streamReader.BaseStream);
+                        MessageBox.Show(ex.Message, "Lab3", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                        return;
                     }
-                    else if (openFileDialog.FilterIndex == lab3FilterIndex)
+                    catch (InvalidOperationException ex)
                     {
-                        var serializer = new SomeSerialiser();
-                        elements = (List<Transport>)serializer.Deserialize(streamReader);
+                        MessageBox.Show(ex.InnerException.Message, "Lab3",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                        return;
+
                     }
+                    
                 }
                 treeView.Nodes.Add(TreeCreater.GetTree(elements));
 
@@ -184,16 +206,7 @@ namespace MainFormApp
                     {
                         var serializer = new XmlSerializer(
                             typeof (List<Transport>),
-                            new Type[]
-                            {
-                                typeof (Transport), typeof (Car), typeof (Plane),
-                                typeof (Helicopter), typeof (Engine),
-                                typeof (Bus),
-                                typeof (SityBus), typeof (TrolleyBus),
-                                typeof (Turbine),
-                                typeof (InternalCombustionEngine),
-                                typeof (PistonlessRotaryEngine)
-                            });
+                            types);
 
 
                         serializer.Serialize(streamWriter, elements);
@@ -201,11 +214,13 @@ namespace MainFormApp
                     else if (saveFileDialog.FilterIndex == binFilterIndex)
                     {
                         var serializer = new BinaryFormatter();
+                        serializer.Binder = serializationBinder;
                         serializer.Serialize(streamWriter.BaseStream, elements);
                     }
                     else if (saveFileDialog.FilterIndex == lab3FilterIndex)
                     {
                         var serializer = new SomeSerialiser();
+                        serializer.Binder = serializationBinder;
                         serializer.Serialize(streamWriter, elements);
 
                     }

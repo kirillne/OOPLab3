@@ -8,6 +8,7 @@ using System.Reflection;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
+using AssemblyLoader;
 
 namespace SomeSerialiserLib
 {
@@ -15,10 +16,12 @@ namespace SomeSerialiserLib
     {
         public object Deserialize(StreamReader serializationStream)
         {
-            
+
+            Loader.Load("Libs");
+            String assemblyString = serializationStream.ReadLine();
             String typeString = serializationStream.ReadLine();
-            if (typeString == null) throw new SerializationException("Uncorrect serializationStream");
-            Type graphType = Type.GetType(typeString);
+            if (typeString == null || assemblyString == null) throw new SerializationException("Uncorrect serializationStream");
+            Type graphType = Binder.BindToType(assemblyString, typeString);
             if (graphType == null) throw new SerializationException("Unknown type " + typeString);
 
             if (graphType.IsPrimitive || graphType.Equals(typeof(String)))
@@ -79,8 +82,11 @@ namespace SomeSerialiserLib
         {
              Type graphType = graph.GetType();
             if (!graphType.IsSerializable) throw new SerializationException("Type " + graphType.FullName + " is not serialisable.");
-
-            serializationStream.WriteLine(graphType.AssemblyQualifiedName);
+            String assemblyString = "";
+            String typeString = "";
+            Binder.BindToName(graphType,out assemblyString, out typeString);
+            serializationStream.WriteLine(assemblyString);
+            serializationStream.WriteLine(typeString);
             if (graphType.IsPrimitive || graph is String)
             {
                 serializationStream.WriteLine(graph.ToString());

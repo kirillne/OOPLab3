@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurbineEngine", "Turbine\Tu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SomeSerialiserLib", "SomeSerialiser\SomeSerialiserLib.csproj", "{8764AF3C-5348-469E-85C7-793B6CF5C5F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssemblyLoader", "..\Lab1\AssemblyLoader\AssemblyLoader.csproj", "{BBB0B572-58B4-4177-9C7E-0DAB59BDF43B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{8764AF3C-5348-469E-85C7-793B6CF5C5F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8764AF3C-5348-469E-85C7-793B6CF5C5F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8764AF3C-5348-469E-85C7-793B6CF5C5F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBB0B572-58B4-4177-9C7E-0DAB59BDF43B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBB0B572-58B4-4177-9C7E-0DAB59BDF43B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBB0B572-58B4-4177-9C7E-0DAB59BDF43B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBB0B572-58B4-4177-9C7E-0DAB59BDF43B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
