@@ -31,13 +31,11 @@ namespace MainFormApp
 
         private Type[] types;
 
-        List<Transport> elements; /*= new List<Transport>
-            {
-               new Car(new InternalCombustionEngine(10,5),"ASD",4,true,4,4,10 ),
-               new Plane(new Turbine(2),"QWE",2000,700,50,new Wing(500,10),false ),
-               new Helicopter(new PistonlessRotaryEngine(5,10),"DFG",2000,0,1,new Screw(4,10),new Screw(2,1)  ),
-               new TrolleyBus(new InternalCombustionEngine(10,5),"ASD",4,true,4,2,150,10,new Route(new Position(),new Position(), 10 ),50 )
-            };*/
+        private Type[] transportTypes;
+
+
+        private List<Transport> elements = new List<Transport>();
+         
 
 
         public Form1()
@@ -45,10 +43,19 @@ namespace MainFormApp
             InitializeComponent();
             types = Loader.Load("Libs");
             serializationBinder = new LoaderSerializationBinder(types);
+            AddSelectTypeComboBoxTypes();
+            }
+
+        private void AddSelectTypeComboBoxTypes()
+        {
+            transportTypes =
+                types.Where(x => x.IsSubclassOf(typeof (Transport)) && !x.IsAbstract).ToArray();
+            foreach (Type type in transportTypes)
+            {
+                addSelectTypeComboBox.Items.Add(type.Name);
+            }
         }
 
-
-   
 
         private void treeView_AfterSelect(object sender, TreeViewEventArgs e)
         {
@@ -151,11 +158,14 @@ namespace MainFormApp
                     }
                     
                 }
-                treeView.Nodes.Add(TreeCreater.GetTree(elements));
-
+                RefreshTreeView();
             }
-           
+        }
 
+        private void RefreshTreeView()
+        {
+            treeView.Nodes.Clear();
+            treeView.Nodes.Add(TreeCreater.GetTree(elements));
         }
 
         private void changeValueButton_Click(object sender, EventArgs e)
@@ -227,6 +237,14 @@ namespace MainFormApp
 
                 }
             }
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            elements.Add(
+                (Transport) Activator.CreateInstance(
+                    transportTypes[addSelectTypeComboBox.SelectedIndex]));
+            RefreshTreeView();
         }
     }
 }

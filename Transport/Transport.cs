@@ -19,7 +19,7 @@ namespace Transports
 
         protected Transport()
         {
-            Engine = null;
+            Engine = new SimpleEngine();
             StateNumber = "ABC";
             CurentPosition = new Position(new Address { State = "Belarus", Sity = "Minsk", Street = "Hikala", Home = "9" }, "Start position");
         }

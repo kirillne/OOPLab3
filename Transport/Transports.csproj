@@ -43,6 +43,7 @@
     <Compile Include="EngineDontStartedExeption.cs" />
     <Compile Include="Engine.cs" />
     <Compile Include="Position.cs" />
+    <Compile Include="SimpleEngine.cs" />
     <Compile Include="Transport.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

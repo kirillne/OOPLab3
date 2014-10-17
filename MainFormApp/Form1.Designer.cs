@@ -39,8 +39,8 @@
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.addButton = new System.Windows.Forms.Button();
+            this.addSelectTypeComboBox = new System.Windows.Forms.ComboBox();
             this.changeValueGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.integerNumericUpDown)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -154,8 +154,8 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.addButton);
+            this.groupBox1.Controls.Add(this.addSelectTypeComboBox);
             this.groupBox1.Location = new System.Drawing.Point(521, 235);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(146, 78);
@@ -163,28 +163,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Добавить";
             // 
-            // button1
+            // addButton
             // 
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(6, 46);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Добавить";
-            this.button1.UseVisualStyleBackColor = true;
+            this.addButton.Location = new System.Drawing.Point(6, 46);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(134, 23);
+            this.addButton.TabIndex = 3;
+            this.addButton.Text = "Добавить";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
-            // comboBox1
+            // addSelectTypeComboBox
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Enabled = false;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "True",
-            "False"});
-            this.comboBox1.Location = new System.Drawing.Point(6, 19);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(135, 21);
-            this.comboBox1.TabIndex = 2;
+            this.addSelectTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.addSelectTypeComboBox.FormattingEnabled = true;
+            this.addSelectTypeComboBox.Location = new System.Drawing.Point(6, 19);
+            this.addSelectTypeComboBox.Name = "addSelectTypeComboBox";
+            this.addSelectTypeComboBox.Size = new System.Drawing.Size(135, 21);
+            this.addSelectTypeComboBox.TabIndex = 2;
             // 
             // Form1
             // 
@@ -219,8 +215,8 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.ComboBox addSelectTypeComboBox;
     }
 }
 
