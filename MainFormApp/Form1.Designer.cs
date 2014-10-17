@@ -193,7 +193,7 @@
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.treeView);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "ОПП. Л/р №3";
             this.changeValueGroupBox.ResumeLayout(false);
             this.changeValueGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.integerNumericUpDown)).EndInit();

@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirTransports", "AirTranspo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AitTransports", "AitTransports", "{42A01E15-F6B8-4342-A873-F6EF80E0DB09}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SityTransports", "SityTransport\SityTransports.csproj", "{5682AA28-EE60-41B4-AA0F-CB080832C8E2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CityTransports", "SityTransport\CityTransports.csproj", "{5682AA28-EE60-41B4-AA0F-CB080832C8E2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainFormApp", "MainFormApp\MainFormApp.csproj", "{623BB530-AD28-4474-A7AD-34E40D713D8F}"
 EndProject

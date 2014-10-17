@@ -1,6 +1,6 @@
 using System;
 
-namespace Transports.SityTransports
+namespace Transports.CityTransports
 {
     [Serializable]
     public class Route
