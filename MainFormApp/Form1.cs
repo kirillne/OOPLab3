@@ -10,8 +10,10 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 using System.Xml.Serialization;
 using AssemblyLoader;
+using Converters;
 using SomeSerialiserLib;
 using Transports;
 
@@ -41,7 +43,9 @@ namespace MainFormApp
         public Form1()
         {
             InitializeComponent();
-            types = Loader.Load("Libs");
+            var transportsTypes = new List<Type>(){typeof(SimpleEngine)};
+            transportsTypes.AddRange(Loader.Load("Libs"));
+            types = transportsTypes.ToArray();
             serializationBinder = new LoaderSerializationBinder(types);
             AddSelectTypeComboBoxTypes();
             }
@@ -218,8 +222,10 @@ namespace MainFormApp
                             typeof (List<Transport>),
                             types);
 
-
-                        serializer.Serialize(streamWriter, elements);
+                        var textWriter = new StringWriter();
+                        serializer.Serialize(textWriter, elements);
+                        var converter = new XmlToJsonConverter();
+                        streamWriter.Write(converter.Convert(textWriter.ToString()));
                     }
                     else if (saveFileDialog.FilterIndex == binFilterIndex)
                     {

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Transports.Transport" Collapsed="true">
-    <Position X="0.5" Y="0.5" Width="1.5" />
+  <Class Name="Transports.Transport">
+    <Position X="6.75" Y="3.5" Width="1.5" />
     <TypeIdentifier />
     <ShowAsAssociation>
       <Property Name="Engine" />
@@ -9,63 +9,58 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Transports.Engine" Collapsed="true">
-    <Position X="11.25" Y="0.5" Width="1.5" />
+    <Position X="6.75" Y="0.5" Width="1.5" />
     <TypeIdentifier />
   </Class>
   <Class Name="Transports.Position" Collapsed="true">
-    <Position X="8" Y="1.5" Width="1.5" />
+    <Position X="3.75" Y="3.75" Width="1.5" />
     <TypeIdentifier />
     <ShowAsAssociation>
       <Property Name="Address" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Transports.SimpleEngine" Collapsed="true">
-    <Position X="10.75" Y="1.75" Width="1.5" />
+    <Position X="5.75" Y="1.75" Width="1.5" />
     <TypeIdentifier />
   </Class>
   <Class Name="Transports.Address" Collapsed="true">
-    <Position X="8" Y="2.5" Width="1.5" />
+    <Position X="1.75" Y="6.25" Width="1.5" />
     <TypeIdentifier />
   </Class>
   <Class Name="Transports.GroundTransports.GroundTransport" Collapsed="true">
-    <Position X="0.5" Y="1.75" Width="1.5" />
+    <Position X="4.5" Y="6.5" Width="1.5" />
     <TypeIdentifier />
   </Class>
   <Class Name="Transports.GroundTransports.Bus" Collapsed="true">
-    <Position X="0.5" Y="3.25" Width="1.5" />
+    <Position X="3.5" Y="7.75" Width="1.5" />
     <TypeIdentifier />
   </Class>
   <Class Name="Transports.GroundTransports.Car" Collapsed="true">
-    <Position X="2.25" Y="3.25" Width="1.5" />
+    <Position X="5.75" Y="7.75" Width="1.5" />
     <TypeIdentifier />
   </Class>
   <Class Name="Transports.CityTransports.SityBus" Collapsed="true">
-    <Position X="0.5" Y="4.5" Width="1.5" />
+    <Position X="3.5" Y="9.25" Width="1.5" />
     <TypeIdentifier />
     <ShowAsAssociation>
       <Property Name="Route" />
     </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Transports.CityTransports.TrolleyBus" Collapsed="true">
-    <Position X="0.5" Y="5.75" Width="1.5" />
+  <Class Name="Transports.CityTransports.TrolleyBus">
+    <Position X="3.5" Y="10.75" Width="1.5" />
     <TypeIdentifier />
   </Class>
-  <Class Name="Transports.CityTransports.Route" Collapsed="true">
-    <Position X="2.75" Y="4.75" Width="1.5" />
+  <Class Name="Transports.CityTransports.Route">
+    <Position X="0.5" Y="9.25" Width="1.5" />
     <TypeIdentifier />
   </Class>
   <Class Name="Transports.AirTransports.AirTransport" Collapsed="true">
-    <Position X="5.5" Y="1.75" Width="1.5" />
+    <Position X="9" Y="6.5" Width="1.5" />
     <TypeIdentifier />
   </Class>
-  <Class Name="Transports.AirTransports.Helicopter" Collapsed="true">
-    <Position X="4.75" Y="3.25" Width="1.5" />
-    <AssociationLine Name="TailScrew" Type="Transports.AirTransports.Screw">
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.05" Y="0.402" />
-      </MemberNameLabel>
-    </AssociationLine>
+  <Class Name="Transports.AirTransports.Helicopter">
+    <Position X="7.75" Y="8" Width="1.5" />
     <TypeIdentifier />
     <ShowAsAssociation>
       <Property Name="MainScrew" />
@@ -73,31 +68,35 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Transports.AirTransports.Plane" Collapsed="true">
-    <Position X="6.5" Y="3.25" Width="1.5" />
+    <Position X="11.25" Y="8.25" Width="1.5" />
     <TypeIdentifier />
     <ShowAsAssociation>
       <Property Name="WingType" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Transports.AirTransports.Screw" Collapsed="true">
-    <Position X="5" Y="4.75" Width="1.5" />
+  <Class Name="Transports.AirTransports.Screw">
+    <Position X="8" Y="9.75" Width="1.5" />
     <TypeIdentifier />
   </Class>
-  <Class Name="Transports.AirTransports.Wing" Collapsed="true">
-    <Position X="6.75" Y="4.75" Width="1.5" />
+  <Class Name="Transports.AirTransports.Wing">
+    <Position X="10.25" Y="9.75" Width="1.5" />
     <TypeIdentifier />
   </Class>
   <Class Name="Engines.InternalCombustionEngine" Collapsed="true">
-    <Position X="11.75" Y="2.75" Width="1.5" />
+    <Position X="8" Y="1.75" Width="1.5" />
     <TypeIdentifier />
   </Class>
   <Class Name="Engines.PistonlessRotaryEngine" Collapsed="true">
-    <Position X="12.75" Y="1.75" Width="1.5" />
+    <Position X="10.25" Y="1.75" Width="1.5" />
     <TypeIdentifier />
   </Class>
   <Class Name="Engines.Turbine" Collapsed="true">
-    <Position X="9.75" Y="2.75" Width="1.5" />
+    <Position X="3.5" Y="1.75" Width="1.5" />
     <TypeIdentifier />
   </Class>
+  <Interface Name="Transports.CityTransports.ISityTransport">
+    <Position X="1.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

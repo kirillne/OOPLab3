@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -24,8 +25,7 @@ namespace MainFormApp
         private static TreeNode GetTreeElementByObject(object element)
         {
             Type elementType = element.GetType();
-            TreeNode result;
-            result = new TreeNode(elementType.Name)
+            var result = new TreeNode(elementType.Name)
             {
                 Tag =
                     new TreeNodeTag {ElementType = elementType, Value = element}
@@ -45,12 +45,7 @@ namespace MainFormApp
             TreeNode result;
             if (!elementType.IsValueType && !(element is String))
             {
-                result = new TreeNode(elementProperty.Name);
-                PropertyInfo[] properties = elementType.GetProperties();
-                foreach (var property in properties)
-                {
-                    result.Nodes.Add(GetTreeElementByProperty(property.GetValue(element),property));
-                }
+                result = TreeNodeFromProperty(element, elementProperty, elementType);
             }
             else
             {
@@ -66,5 +61,17 @@ namespace MainFormApp
             return result;
         }
 
+        private static TreeNode TreeNodeFromProperty(object element, PropertyInfo elementProperty,
+            Type elementType)
+        {
+            TreeNode result;
+            result = new TreeNode(elementProperty.Name);
+            PropertyInfo[] properties = elementType.GetProperties();
+            foreach (var property in properties)
+            {
+                result.Nodes.Add(GetTreeElementByProperty(property.GetValue(element), property));
+            }
+            return result;
+        }
     }
 }

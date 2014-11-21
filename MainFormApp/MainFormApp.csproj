@@ -84,6 +84,10 @@
       <Project>{BBB0B572-58B4-4177-9C7E-0DAB59BDF43B}</Project>
       <Name>AssemblyLoader</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Converters\Converters.csproj">
+      <Project>{0D9E2244-D8AB-4F65-93DD-C9F23A1157A4}</Project>
+      <Name>Converters</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SomeSerialiser\SomeSerialiserLib.csproj">
       <Project>{8764af3c-5348-469e-85c7-793b6cf5c5f4}</Project>
       <Name>SomeSerialiserLib</Name>

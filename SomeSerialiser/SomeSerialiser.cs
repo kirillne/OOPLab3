@@ -80,7 +80,7 @@ namespace SomeSerialiserLib
         public void Serialize(StreamWriter serializationStream,
             object graph)
         {
-             Type graphType = graph.GetType();
+            Type graphType = graph.GetType();
             if (!graphType.IsSerializable) throw new SerializationException("Type " + graphType.FullName + " is not serialisable.");
             String assemblyString = "";
             String typeString = "";

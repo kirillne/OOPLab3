@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Transports", "Transports", "{CFCCB095-0EFB-49D2-9921-10B39706BED6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transports", "Transport\Transports.csproj", "{9EEDE80D-7FC7-445D-ACDB-5B45E08381F4}"
@@ -28,6 +30,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssemblyLoader", "..\Lab1\AssemblyLoader\AssemblyLoader.csproj", "{BBB0B572-58B4-4177-9C7E-0DAB59BDF43B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassDiagram", "ClassDiagram\ClassDiagram.csproj", "{BA106DDF-693B-40CA-81FD-554C9D09B80F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Converters", "Converters\Converters.csproj", "{0D9E2244-D8AB-4F65-93DD-C9F23A1157A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +79,10 @@ Global
 		{BA106DDF-693B-40CA-81FD-554C9D09B80F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA106DDF-693B-40CA-81FD-554C9D09B80F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA106DDF-693B-40CA-81FD-554C9D09B80F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D9E2244-D8AB-4F65-93DD-C9F23A1157A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D9E2244-D8AB-4F65-93DD-C9F23A1157A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D9E2244-D8AB-4F65-93DD-C9F23A1157A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D9E2244-D8AB-4F65-93DD-C9F23A1157A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
