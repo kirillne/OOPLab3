@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("EmptyConverter")]
+[assembly: AssemblyTitle("EmptyConverterLib")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("EmptyConverter")]
+[assembly: AssemblyProduct("EmptyConverterLib")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("1b0a0fcc-f1ec-4881-9673-8e487d018bfd")]
+[assembly: Guid("1805eb21-024a-4708-9193-33b51075b1c7")]
 
 // Version information for an assembly consists of the following four values:
 //
