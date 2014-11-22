@@ -49,7 +49,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Transport\Transports.csproj">
       <Project>{9eede80d-7fc7-445d-acdb-5b45e08381f4}</Project>
-      <Name>Transports %28Transports\Transports%29</Name>
+      <Name>Transports</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

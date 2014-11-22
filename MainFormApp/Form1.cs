@@ -13,7 +13,7 @@ using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Serialization;
 using AssemblyLoader;
-using Converters;
+using CustomConverters;
 using SomeSerialiserLib;
 using Transports;
 
@@ -123,10 +123,13 @@ namespace MainFormApp
                             var serializer = new XmlSerializer(
                                 typeof (List<Transport>),
                                 types);
-
+                            var converter = new CustomJsonToXmlConverter();
+                            var textReader =
+                                new StringReader(converter.Convert(streamReader.ReadToEnd()));
+                           
                             elements =
                                 (List<Transport>)
-                                    serializer.Deserialize(streamReader);
+                                    serializer.Deserialize(textReader);
                         }
                         else if (openFileDialog.FilterIndex == binFilterIndex)
                         {
@@ -224,7 +227,7 @@ namespace MainFormApp
 
                         var textWriter = new StringWriter();
                         serializer.Serialize(textWriter, elements);
-                        var converter = new XmlToJsonConverter();
+                        var converter = new CustomXmlToJsonConverter();
                         streamWriter.Write(converter.Convert(textWriter.ToString()));
                     }
                     else if (saveFileDialog.FilterIndex == binFilterIndex)

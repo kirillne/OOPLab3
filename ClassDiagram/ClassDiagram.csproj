@@ -48,7 +48,7 @@
     </ProjectReference>
     <ProjectReference Include="..\GroundTransport\GroundTransports.csproj">
       <Project>{e9ca9e49-87e5-423f-8a6f-9d43dffd3857}</Project>
-      <Name>GroundTransports %28Transports\GroundTransports\GroundTransports%29</Name>
+      <Name>GroundTransports</Name>
     </ProjectReference>
     <ProjectReference Include="..\SimpleEngines\SimpleEngines.csproj">
       <Project>{487b9690-9843-4b72-960d-36ccdd96ea02}</Project>
@@ -60,7 +60,7 @@
     </ProjectReference>
     <ProjectReference Include="..\Transport\Transports.csproj">
       <Project>{9eede80d-7fc7-445d-acdb-5b45e08381f4}</Project>
-      <Name>Transports %28Transports\Transports%29</Name>
+      <Name>Transports</Name>
     </ProjectReference>
     <ProjectReference Include="..\Turbine\TurbineEngine.csproj">
       <Project>{23df8a26-0e02-4981-b390-23f5ec83b975}</Project>

@@ -7,8 +7,8 @@
     <ProjectGuid>{0D9E2244-D8AB-4F65-93DD-C9F23A1157A4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Converters</RootNamespace>
-    <AssemblyName>Converters</AssemblyName>
+    <RootNamespace>CustomConverters</RootNamespace>
+    <AssemblyName>CustomConverters</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,8 +39,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomJsonToXmlConverter.cs" />
+    <Compile Include="CustomXmlJsonConverter.cs" />
+    <Compile Include="IConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="XmlToJsonConverter.cs" />
+    <Compile Include="CustomXmlToJsonConverter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

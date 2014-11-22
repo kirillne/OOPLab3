@@ -2,14 +2,14 @@
 using System.IO;
 using System.Xml;
 
-namespace Converters
+namespace CustomConverters
 {
-    public class XmlToJsonConverter
+    internal static class CustomXmlToJsonConverter
     {
 
-        private int tabCount = 0;
+        private static int tabCount = 0;
 
-        public string Convert(String xml)
+        internal static string Convert(String xml)
         {
             tabCount = 0;
             String result = "";
@@ -25,7 +25,7 @@ namespace Converters
             return result;
         }
 
-        private string WriteAtributes(XmlReader reader)
+        private static string WriteAtributes(XmlReader reader)
         {
             String result = "";
             if (reader.HasAttributes)
@@ -46,9 +46,9 @@ namespace Converters
             return result;
         }
 
-        private string WriteClass(XmlReader reader, char openChar, char closeChar)
+        private static string WriteClass(XmlReader reader, char openChar, char closeChar)
         {
-            String result = string.Format("{0}\"{1}\":", new string('\t', tabCount), reader.Name);
+            String result = string.Format("{0}\"{1}\" :", new string('\t', tabCount), reader.Name);
             tabCount++;
             if (reader.IsEmptyElement)
             {
@@ -82,15 +82,15 @@ namespace Converters
             return result;
         }
 
-        private string WriteEmptyValue(string result)
+        private static string WriteEmptyValue(string result)
         {
-            result += "\"\"\r\n";
+            result += " \"\"\r\n";
             tabCount--;
             return result;
         }
 
 
-        private string WriteElement(XmlReader reader)
+        private static string WriteElement(XmlReader reader)
         {
             String result = "";
             if (reader.NodeType == XmlNodeType.Element)
@@ -107,7 +107,7 @@ namespace Converters
             return result;
         }
 
-        private string WriteText(XmlReader reader)
+        private static string WriteText(XmlReader reader)
         {
             String result = "";
             result += string.Format(" \"{0}\",\r\n",reader.Value);
