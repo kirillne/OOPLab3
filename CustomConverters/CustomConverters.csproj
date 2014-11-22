@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8764AF3C-5348-469E-85C7-793B6CF5C5F4}</ProjectGuid>
+    <ProjectGuid>{0D9E2244-D8AB-4F65-93DD-C9F23A1157A4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SomeSerialiserLib</RootNamespace>
-    <AssemblyName>SomeSerialiserLib</AssemblyName>
+    <RootNamespace>CustomConverters</RootNamespace>
+    <AssemblyName>CustomConverters</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,12 +39,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SomeSerialiser.cs" />
+    <Compile Include="CustomJsonToXmlConverter.cs" />
+    <Compile Include="CustomXmlJsonConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CustomXmlToJsonConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AssemblyLoader\AssemblyLoader.csproj">
-      <Project>{BBB0B572-58B4-4177-9C7E-0DAB59BDF43B}</Project>
+      <Project>{bbb0b572-58b4-4177-9c7e-0dab59bdf43b}</Project>
       <Name>AssemblyLoader</Name>
     </ProjectReference>
   </ItemGroup>

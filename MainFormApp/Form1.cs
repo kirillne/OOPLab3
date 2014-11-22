@@ -13,7 +13,6 @@ using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Serialization;
 using AssemblyLoader;
-using CustomConverters;
 using SomeSerialiserLib;
 using Transports;
 
@@ -29,26 +28,41 @@ namespace MainFormApp
 
         private TreeNode selectedNode;
 
-        private LoaderSerializationBinder serializationBinder;
+        private readonly LoaderSerializationBinder serializationBinder;
 
-        private Type[] types;
+        private readonly LoaderConverter loaderConverter;
+
+        private readonly Type[] types;
 
         private Type[] transportTypes;
 
+      private List<Transport> elements = new List<Transport>();
 
-        private List<Transport> elements = new List<Transport>();
-         
 
 
         public Form1()
         {
             InitializeComponent();
-            var transportsTypes = new List<Type>(){typeof(SimpleEngine)};
+            var transportsTypes = new List<Type>() {typeof (SimpleEngine)};
             transportsTypes.AddRange(Loader.Load("Libs"));
             types = transportsTypes.ToArray();
             serializationBinder = new LoaderSerializationBinder(types);
+            loaderConverter = new LoaderConverter("Converters");
             AddSelectTypeComboBoxTypes();
+            AddConvertersComboBoxTypes();
+        }
+
+        private void AddConvertersComboBoxTypes()
+        {
+            foreach (String name in loaderConverter.AvalibleConvertersNames)
+            {
+                convertersComboBox.Items.Add(name);
             }
+            if (loaderConverter.AvalibleConvertersNames.Count > 0)
+            {
+                convertersComboBox.SelectedIndex = 0;
+            }
+        }
 
         private void AddSelectTypeComboBoxTypes()
         {
@@ -123,13 +137,30 @@ namespace MainFormApp
                             var serializer = new XmlSerializer(
                                 typeof (List<Transport>),
                                 types);
-                            var converter = new CustomJsonToXmlConverter();
+                            try
+                            {
                             var textReader =
-                                new StringReader(converter.Convert(streamReader.ReadToEnd()));
-                           
+                                new StringReader(loaderConverter.GetXml(streamReader));
+
                             elements =
                                 (List<Transport>)
                                     serializer.Deserialize(textReader);
+                            
+                            }
+                            catch (UnknownConverterException)
+                            {
+                                MessageBox.Show("Неизвестный тип конвертора", "Lab3",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                                return;
+                            }
+                            catch (ArgumentException)
+                            {
+                                MessageBox.Show("Неверный формат входного файла", "Lab3",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                                return;
+                            }
                         }
                         else if (openFileDialog.FilterIndex == binFilterIndex)
                         {
@@ -224,11 +255,10 @@ namespace MainFormApp
                         var serializer = new XmlSerializer(
                             typeof (List<Transport>),
                             types);
-
                         var textWriter = new StringWriter();
                         serializer.Serialize(textWriter, elements);
-                        var converter = new CustomXmlToJsonConverter();
-                        streamWriter.Write(converter.Convert(textWriter.ToString()));
+                        streamWriter.Write(loaderConverter.GetJson(textWriter.ToString(), convertersComboBox.SelectedItem.ToString()));
+                      
                     }
                     else if (saveFileDialog.FilterIndex == binFilterIndex)
                     {

@@ -41,6 +41,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.addButton = new System.Windows.Forms.Button();
             this.addSelectTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.convertersComboBox = new System.Windows.Forms.ComboBox();
             this.changeValueGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.integerNumericUpDown)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -71,7 +72,7 @@
             // openButton
             // 
             this.openButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.openButton.Location = new System.Drawing.Point(521, 45);
+            this.openButton.Location = new System.Drawing.Point(521, 88);
             this.openButton.Name = "openButton";
             this.openButton.Size = new System.Drawing.Size(146, 23);
             this.openButton.TabIndex = 4;
@@ -86,7 +87,7 @@
             this.changeValueGroupBox.Controls.Add(this.booleanComboBox);
             this.changeValueGroupBox.Controls.Add(this.stringTextBox);
             this.changeValueGroupBox.Controls.Add(this.integerNumericUpDown);
-            this.changeValueGroupBox.Location = new System.Drawing.Point(521, 74);
+            this.changeValueGroupBox.Location = new System.Drawing.Point(521, 169);
             this.changeValueGroupBox.Name = "changeValueGroupBox";
             this.changeValueGroupBox.Size = new System.Drawing.Size(146, 155);
             this.changeValueGroupBox.TabIndex = 5;
@@ -156,7 +157,7 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.addButton);
             this.groupBox1.Controls.Add(this.addSelectTypeComboBox);
-            this.groupBox1.Location = new System.Drawing.Point(521, 235);
+            this.groupBox1.Location = new System.Drawing.Point(521, 330);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(146, 78);
             this.groupBox1.TabIndex = 6;
@@ -182,11 +183,21 @@
             this.addSelectTypeComboBox.Size = new System.Drawing.Size(135, 21);
             this.addSelectTypeComboBox.TabIndex = 2;
             // 
+            // convertersComboBox
+            // 
+            this.convertersComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.convertersComboBox.FormattingEnabled = true;
+            this.convertersComboBox.Location = new System.Drawing.Point(521, 45);
+            this.convertersComboBox.Name = "convertersComboBox";
+            this.convertersComboBox.Size = new System.Drawing.Size(146, 21);
+            this.convertersComboBox.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 448);
+            this.Controls.Add(this.convertersComboBox);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.changeValueGroupBox);
             this.Controls.Add(this.openButton);
@@ -217,6 +228,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.ComboBox addSelectTypeComboBox;
+        private System.Windows.Forms.ComboBox convertersComboBox;
     }
 }
 

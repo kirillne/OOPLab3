@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0D9E2244-D8AB-4F65-93DD-C9F23A1157A4}</ProjectGuid>
+    <ProjectGuid>{F89DB360-952D-4204-AEC5-B56472AF01B2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CustomConverters</RootNamespace>
-    <AssemblyName>CustomConverters</AssemblyName>
+    <RootNamespace>EmptyConverter</RootNamespace>
+    <AssemblyName>EmptyConverter</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,11 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomJsonToXmlConverter.cs" />
-    <Compile Include="CustomXmlJsonConverter.cs" />
-    <Compile Include="IConverter.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CustomXmlToJsonConverter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

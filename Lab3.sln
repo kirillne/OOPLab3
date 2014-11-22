@@ -27,11 +27,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurbineEngine", "Turbine\Tu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SomeSerialiserLib", "SomeSerialiser\SomeSerialiserLib.csproj", "{8764AF3C-5348-469E-85C7-793B6CF5C5F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssemblyLoader", "..\Lab1\AssemblyLoader\AssemblyLoader.csproj", "{BBB0B572-58B4-4177-9C7E-0DAB59BDF43B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassDiagram", "ClassDiagram\ClassDiagram.csproj", "{BA106DDF-693B-40CA-81FD-554C9D09B80F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomConverters", "Converters\CustomConverters.csproj", "{0D9E2244-D8AB-4F65-93DD-C9F23A1157A4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomConverters", "CustomConverters\CustomConverters.csproj", "{0D9E2244-D8AB-4F65-93DD-C9F23A1157A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssemblyLoader", "AssemblyLoader\AssemblyLoader.csproj", "{BBB0B572-58B4-4177-9C7E-0DAB59BDF43B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Converters", "Converters", "{6F24F5F9-E358-41E9-AD9E-74675762AA58}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,10 +73,6 @@ Global
 		{8764AF3C-5348-469E-85C7-793B6CF5C5F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8764AF3C-5348-469E-85C7-793B6CF5C5F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8764AF3C-5348-469E-85C7-793B6CF5C5F4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BBB0B572-58B4-4177-9C7E-0DAB59BDF43B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BBB0B572-58B4-4177-9C7E-0DAB59BDF43B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BBB0B572-58B4-4177-9C7E-0DAB59BDF43B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BBB0B572-58B4-4177-9C7E-0DAB59BDF43B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BA106DDF-693B-40CA-81FD-554C9D09B80F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BA106DDF-693B-40CA-81FD-554C9D09B80F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA106DDF-693B-40CA-81FD-554C9D09B80F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -83,6 +81,10 @@ Global
 		{0D9E2244-D8AB-4F65-93DD-C9F23A1157A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D9E2244-D8AB-4F65-93DD-C9F23A1157A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D9E2244-D8AB-4F65-93DD-C9F23A1157A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBB0B572-58B4-4177-9C7E-0DAB59BDF43B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBB0B572-58B4-4177-9C7E-0DAB59BDF43B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBB0B572-58B4-4177-9C7E-0DAB59BDF43B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBB0B572-58B4-4177-9C7E-0DAB59BDF43B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -96,5 +98,6 @@ Global
 		{B1B472C2-1DC8-47E7-ADBB-57621B2E01C1} = {42A01E15-F6B8-4342-A873-F6EF80E0DB09}
 		{487B9690-9843-4B72-960D-36CCDD96EA02} = {340587A4-5AE3-42C5-8518-978E96F87952}
 		{23DF8A26-0E02-4981-B390-23F5EC83B975} = {340587A4-5AE3-42C5-8518-978E96F87952}
+		{0D9E2244-D8AB-4F65-93DD-C9F23A1157A4} = {6F24F5F9-E358-41E9-AD9E-74675762AA58}
 	EndGlobalSection
 EndGlobal
