@@ -37,6 +37,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Converters", "Converters", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmptyConverterLib", "EmptyConverterLib\EmptyConverterLib.csproj", "{AA4D9969-0A6C-4D33-A584-9F68B639D62D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewtonsoftConverter", "NewtonsoftConverter\NewtonsoftConverter.csproj", "{FD9B936F-607E-41F0-BAB6-8E24DD56B6A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +93,10 @@ Global
 		{AA4D9969-0A6C-4D33-A584-9F68B639D62D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA4D9969-0A6C-4D33-A584-9F68B639D62D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA4D9969-0A6C-4D33-A584-9F68B639D62D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD9B936F-607E-41F0-BAB6-8E24DD56B6A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD9B936F-607E-41F0-BAB6-8E24DD56B6A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD9B936F-607E-41F0-BAB6-8E24DD56B6A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD9B936F-607E-41F0-BAB6-8E24DD56B6A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -106,5 +112,6 @@ Global
 		{23DF8A26-0E02-4981-B390-23F5EC83B975} = {340587A4-5AE3-42C5-8518-978E96F87952}
 		{0D9E2244-D8AB-4F65-93DD-C9F23A1157A4} = {6F24F5F9-E358-41E9-AD9E-74675762AA58}
 		{AA4D9969-0A6C-4D33-A584-9F68B639D62D} = {6F24F5F9-E358-41E9-AD9E-74675762AA58}
+		{FD9B936F-607E-41F0-BAB6-8E24DD56B6A8} = {6F24F5F9-E358-41E9-AD9E-74675762AA58}
 	EndGlobalSection
 EndGlobal
